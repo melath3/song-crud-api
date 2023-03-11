@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const cors = require('cors');
@@ -20,8 +21,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
+app.listen(PORT, () => {
+    console.log(`Server Started at ${PORT}`)
 })
 
 const routes = require('./routes/routes');
